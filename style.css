@@ -1,0 +1,244 @@
+/* -------------RESETS------------- */
+/*Resets are used for overwriting default html tag properties*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  font,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+    list-style: none;
+  }
+  html {
+    font-size: 62.5%;
+    height: 100%;
+  }
+  body {
+    color: #2b2b2b;
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    overflow-x: hidden;
+    line-height: 1.4;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section,
+  time {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  
+  /*GRID*/
+  .container {
+    max-width: 130rem;
+    width: 100%;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
+  
+  /*HEADER*/
+  .header {
+    background: black;
+  }
+  .header .header__nav ul {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+.header .header__wrapper .branding span{
+    width: 0.1rem;
+    height: 3rem;
+    background-color: #ffffff;
+    display: block;
+}
+
+  .header .header__nav ul span {
+    width: 0.1rem;
+    height: 3rem;
+    background-color: #ffffff;
+    display: block;
+  }
+  .header .header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  .header .header__nav{
+    display: flex-start;
+    align-items: center;
+    justify-content: space-between;
+  }
+     .header .header__wrapper .branding{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+     }
+     .header .header__wrapper .branding li{
+        color: white;
+        font-weight: 600;
+     }
+  .header .header__wrapper .toggle__menu {
+    display: none;
+    z-index: 999;
+  }
+  .header .header__nav ul li a {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .header .header__nav ul li a:hover {
+    color: grey;
+  }
+  
+  .header .header__wrapper .branding span:nth-child(2){
+    margin:0.5rem 0;
+  }
+  .header .toggle__menu span{
+    width:3rem;
+    height: 0.2rem;
+    background-color: white;
+    display: block;
+    border-radius: 5rem;
+    transition: 0.5s ease;
+  }
+  .header .toggle__menu span:nth-child(2){
+    margin:1rem 2;
+  }
+  .header .toggle__menu.open span:first-child{
+    transform: rotate(225deg) translate(0, -10px);
+    transition: 0.5s ease;
+  }
+  .header .toggle__menu.open span:nth-child(2){
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  .header .toggle__menu.open span:last-child{
+    transform: rotate(-225deg) translate(0, 10px);
+    transition: 0.5s ease;
+  }
+  /*mobile view*/
+  @media screen and (max-width:500px){
+    
+    .header{
+      position: relative;
+      position: fixed;
+      width: 100%;
+    }
+
+    .header .header__nav{
+      position: absolute;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      height: 100vh;
+      bottom: -100rem;
+      width: 100%;
+      padding: 5rem 0rem 0rem 5rem;
+      transition:  .55 ease;
+    }
+
+    .header .header__nav.open{
+      right: 0rem;
+    }
+
+    .header .header__nav ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .header .header__nav ul span{
+      transform: rotate(90deg);
+    }
+
+    .header .header__wrapper .toggle__menu{
+      display: block;
+    }
+  }
+  
